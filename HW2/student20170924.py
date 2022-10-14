@@ -9,8 +9,7 @@ dest_filename = 'student.xlsx'
 ws = wb.active
 ws.title = 'Sheet1'
 
-ws.append(['id', 'name', 'midterm', 'final', 'homework', 'attendance',
-	'total', 'grade'])
+ws.append(['id', 'name', 'midterm', 'final', 'homework', 'attendance', 'total', 'grade'])
 ws.append(['20140001', 'Sophia', 23, 53, 41, 1])
 ws.append(['20140002', 'Emily', 94, 36, 33, 1])
 ws.append(['20140003', 'Lily', 37, 20, 46, 1])
@@ -23,7 +22,6 @@ ws.append(['20150007', 'Sophie', 48, 92, 14, 1])
 ws.append(['20150009', 'Chloe', 91, 64, 39, 1])
 
 for i in range(2, 12):
-	ws.cell(i, 7, value = ws.cell(i, 3).value * 0.3 +
-	ws.cell(i, 4).value * 0.35 + ws.cell(i, 5).value * 0.34 + 1)
+	ws.cell(i, 7, value = ws.cell(i, 3).value * 0.3 + ws.cell(i, 4).value * 0.35 + ws.cell(i, 5).value * 0.34 + 1)
 
 wb.save(filename = dest_filename)
