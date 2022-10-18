@@ -20,17 +20,19 @@ sort_total = sorted(total.items(), key = lambda x : x[1], reverse=True)
 
 for i in range(len(sort_total)):
 	if i + 1 <= len(sort_total) / 10 * 3:
-		if i + 1 <= len(sort_total) / 10 * 3 - ((3 - 0) / 2):
+		if i + 1 <= 0 + len(sort_total) / 10 * (3 - 0) / 2:
 			ws.cell(row = sort_total[i][0], column = 8).value ='A+'
 		else:
 			ws.cell(row = sort_total[i][0], column = 8).value ='A0'
 	elif i + 1 <= len(sort_total) / 10 * 7:
-		if i + 1 <= len(sort_total) / 10 * 7 - ((7 - 3) / 2):
+		if i + 1 <= len(sort_total) / 10 * 3 +\
+		len(sort_total) / 10 * (7 - 3) / 2:
 			ws.cell(row = sort_total[i][0], column = 8).value ='B+'
 		else:
 			ws.cell(row = sort_total[i][0], column = 8).value ='B0'
 	else:
-		if i + 1 <= len(sort_total) - ((10 - 7) / 2):
+		if i + 1 <= len(sort_total) / 10 * 7 +\
+		len(sort_total) / 10 * (10 - 7) / 2:
 			ws.cell(row = sort_total[i][0], column = 8).value ='C+'
 		else:
 			ws.cell(row = sort_total[i][0], column = 8).value ='C0'
