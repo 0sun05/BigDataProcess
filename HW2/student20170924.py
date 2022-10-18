@@ -38,9 +38,10 @@ for i in range(len(sort_total)):
 			ws.cell(row = sort_total[i][0], column = 8).value ='C0'
 
 for i in range(len(sort_total) - 1, 0, -1):
-	if ws.cell(row = sort_total[i][0], column = 7).value == \
-	ws.cell(row = sort_total[i - 1][0], column = 7).value:
-		ws.cell(row = sort_total[i - 1][0], column = 8).value = \
-		ws.cell(row = sort_total[i][0], column = 8).value
+	if len(sort_total) != 1:
+		if ws.cell(row = sort_total[i][0], column = 7).value ==\
+		ws.cell(row = sort_total[i - 1][0], column = 7).value:
+			ws.cell(row = sort_total[i-1][0], column = 8).value ==\
+			ws.cell(row = sort_total[i][0], column = 8).value
 
 wb.save("student.xlsx")
